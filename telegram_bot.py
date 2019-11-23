@@ -3,7 +3,7 @@ from keyboards import KeyboardsForBot
 from bot_message import TextMessageClass
 from parsers import ParsersForRyhmes
 
-bot = telebot.TeleBot('984177260:AAEVmePjaW52DjM1ZFjLgAMgNSY_nDZErSQ')
+bot = telebot.TeleBot('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx')
 
 class TelegramBot():
     language={}#Dictionary id:language

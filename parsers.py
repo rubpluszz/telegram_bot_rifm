@@ -3,7 +3,7 @@ from selenium import webdriver
 
 class ParsersForRyhmes():
     
-    def selenium_parser_ua(word):
+    def selenium_parser_uk(word):
     
         chromedriver = '/usr/local/bin/chromedriver'
         options = webdriver.ChromeOptions()

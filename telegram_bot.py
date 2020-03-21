@@ -1,4 +1,4 @@
-#!usr/bin/env python3
+#!usr/bin/python3
 # -*- coding: utf-8 -*-
 import sqlite3
 import telebot
@@ -93,7 +93,7 @@ def analiz_message(message):
         else:
             bot.send_message(message.chat.id, f'{message.text} rhymes - {parser.selenium_parser_en()}')
     except Exception as e:
-        bot_send_error_message_to_admin("analiz_message", str(e), telegram_id)
+        bot_send_error_message_to_admin("analiz_message", str(e), message.from_user.id)
 
 def bot_send_error_message_to_admin(function_name, e , telegram_id):
     bot.send_message(admin_id, f"Erro in the {function_name} - {e}")
@@ -101,7 +101,7 @@ def bot_send_error_message_to_admin(function_name, e , telegram_id):
                     'uk':"Вибачте будь-ласка у нас сталася маленька помилка. Адміністратор вже працює над цим. Спробуйте повторити свої дії, або виконати інші. ",
                     'ru':"Простите пожалуйста у нас произошла маленькая ошибка. Администратор уже работает над этим. Попробуйте повторить свои действия, или выполнить другие.",
                     'pl':"Przepraszam, mamy mały błąd. Administrator już nad tym pracuje. Spróbuj powtórzyć swoje działania lub wykonać inne.",}
-    bot.send_message(telegram_id, error_message[choose_usser_language(telegram_id)])
+    bot.send_message(telegram_id, error_message(telegram_id))
 
 if __name__ in "__main__":
     bot.polling(none_stop = True)
